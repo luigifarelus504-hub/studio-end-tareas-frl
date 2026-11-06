@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #111111;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.encabezado {
+    min-height: 75px;
+    padding: 20px 7%;
+    border-bottom: 1px solid #dddddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #777777;
+}
+
+.boton-volver {
+    padding: 10px 18px;
+    border: 1px solid #111111;
+    background: white;
+}
+
+main {
+    width: 86%;
+    max-width: 1300px;
+    margin: 50px auto;
+}
+
+.pantalla {
+    display: none;
+}
+
+.pantalla.activa {
+    display: block;
+}
+
+.bienvenida {
+    margin-bottom: 45px;
+}
+
+.bienvenida p:first-child {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #777777;
+}
+
+.bienvenida h1 {
+    font-size: 45px;
+    margin-top: 15px;
+}
+
+.bienvenida h2 {
+    font-size: 35px;
+    color: #777777;
+    font-weight: normal;
+}
+
+#fraseBienvenida {
+    margin-top: 20px;
+    color: #666666;
+}
+
+.menu-principal {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 15px;
+}
+
+.opcion {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 25px;
+    min-height: 170px;
+    transition: 0.2s;
+}
+
+.opcion:hover {
+    border-color: #111111;
+    transform: translateY(-3px);
+}
+
+.opcion span {
+    color: #888888;
+}
+
+.opcion h2 {
+    margin: 20px 0 8px;
+}
+
+.opcion p {
+    color: #777777;
+}
+
+.opcion b {
+    display: block;
+    text-align: right;
+    font-size: 22px;
+}
+
+.titulo-seccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.titulo-seccion h1 {
+    font-size: 38px;
+    margin: 10px 0;
+}
+
+.titulo-seccion p {
+    color: #777777;
+}
+
+.boton-crear,
+#guardarProyecto {
+    background: #111111;
+    color: white;
+    border: none;
+    padding: 13px 20px;
+}
+
+.lista-proyectos {
+    display: grid;
+    gap: 15px;
+}
+
+.tarjeta-proyecto {
+    border: 1px solid #dddddd;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tarjeta-proyecto button {
+    padding: 9px 15px;
+    background: white;
+    border: 1px solid #222222;
+}
+
+.tarjeta-proyecto button:hover {
+    background: #111111;
+    color: white;
+}
+
+.editor-cabecera {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#tituloProyecto {
+    width: 100%;
+    padding: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    border-bottom: 2px solid #111111;
+    outline: none;
+}
+
+.acciones-editor {
+    display: flex;
+    gap: 5px;
+}
+
+.acciones-editor button {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 1px solid #cccccc;
+    font-size: 20px;
+}
+
+.buscador-notas {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#buscarNota {
+    flex: 1;
+    padding: 13px;
+    border: 1px solid #cccccc;
+    outline: none;
+}
+
+#botonBuscar {
+    padding: 12px 20px;
+    background: #111111;
+    color: white;
+    border: none;
+}
+
+.herramientas {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 15px;
+    background: #f5f5f5;
+    border: 1px solid #dddddd;
+}
+
+.herramientas label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#colorTexto {
+    width: 45px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+}
+
+#tipoLetra {
+    padding: 10px;
+    border: 1px solid #bbbbbb;
+    background: white;
+}
+
+.herramientas button,
+.boton-imagen {
+    padding: 10px 15px;
+    background: white;
+    border: 1px solid #222222;
+}
+
+.boton-imagen {
+    cursor: pointer;
+}
+
+.panel-colores {
+    margin: 18px 0;
+    padding: 18px;
+    border: 1px solid #dddddd;
+}
+
+.panel-colores > p {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #777777;
+    margin-bottom: 15px;
+}
+
+.paleta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.color-opcion {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffffff;
+    outline: 1px solid #bbbbbb;
+    border-radius: 50%;
+}
+
+.color-opcion:hover {
+    transform: scale(1.15);
+}
+
+.equipar-color {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.contenido-proyecto {
+    display: grid;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.nota {
+    padding: 20px;
+    border: 1px solid #dddddd;
+    background: white;
+    scroll-margin-top: 25px;
+}
+
+.titulo-nota {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    outline: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.texto-enriquecido {
+    min-height: 150px;
+    padding: 12px;
+    outline: none;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.texto-enriquecido:empty::before {
+    content: attr(data-placeholder);
+    color: #999999;
+    pointer-events: none;
+}
+
+.nota button {
+    margin-top: 15px;
+    padding: 9px 13px;
+    background: white;
+    border: 1px solid #222222;
+}
+
+.imagen-proyecto {
+    max-width: 100%;
+    max-height: 450px;
+    display: block;
+    margin: 15px 0;
+    object-fit: contain;
+}
+
+.ayuda-atajos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 25px 0;
+    color: #777777;
+    font-size: 13px;
+}
+
+.editor-pie {
+    margin-top: 20px;
+    text-align: right;
+}
+
+#contenidoVista {
+    margin-top: 25px;
+}
+
+.minimizado #contenidoEditor,
+.minimizado .buscador-notas,
+.minimizado .ayuda-atajos {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: 35px;
+    border-top: 1px solid #dddddd;
+    color: #777777;
+    margin-top: 70px;
+}
+
+footer p {
+    font-weight: bold;
+    color: #111111;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 700px) {
+
+    main {
+        width: 92%;
+    }
+
+    .bienvenida h1 {
+        font-size: 32px;
+    }
+
+    .bienvenida h2 {
+        font-size: 25px;
+    }
+
+    .titulo-seccion {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .editor-cabecera {
+        flex-direction: column;
+    }
+
+    .buscador-notas {
+        flex-direction: column;
+    }
+}

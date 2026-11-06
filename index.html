@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDIO END TAREAS FRL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="encabezado">
+    <div class="logo">STUDIO END <span>TAREAS FRL</span></div>
+    <button id="volver" class="boton-volver" hidden>← Volver</button>
+</header>
+
+<main>
+
+    <!-- INICIO -->
+    <section id="inicio" class="pantalla activa">
+
+        <div class="bienvenida">
+            <p>BIENVENIDO A TU ESPACIO PERSONAL</p>
+            <h1>Organiza tus ideas.</h1>
+            <h2>Construye tus proyectos.</h2>
+            <p id="fraseBienvenida"></p>
+        </div>
+
+        <div class="menu-principal">
+
+            <button class="opcion" data-seccion="tareas">
+                <span>01</span>
+                <h2>Tareas</h2>
+                <p>Organiza tus actividades.</p>
+                <b>→</b>
+            </button>
+
+            <button class="opcion" data-seccion="trabajos">
+                <span>02</span>
+                <h2>Trabajos</h2>
+                <p>Desarrolla tus proyectos.</p>
+                <b>→</b>
+            </button>
+
+            <button class="opcion" data-seccion="metas">
+                <span>03</span>
+                <h2>Metas</h2>
+                <p>Construye tus objetivos.</p>
+                <b>→</b>
+            </button>
+
+            <button class="opcion" data-seccion="portafolio">
+                <span>04</span>
+                <h2>Portafolio</h2>
+                <p>Guarda tus evidencias.</p>
+                <b>→</b>
+            </button>
+
+            <button class="opcion" data-seccion="higiene">
+                <span>05</span>
+                <h2>Higiene</h2>
+                <p>Organiza tu rutina personal.</p>
+                <b>→</b>
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- PROYECTOS -->
+    <section id="seccionProyectos" class="pantalla" hidden>
+
+        <div class="titulo-seccion">
+            <div>
+                <p>TU ESPACIO DE TRABAJO</p>
+                <h1 id="nombreSeccion">Tareas</h1>
+                <p id="fraseSeccion"></p>
+            </div>
+
+            <button id="crearProyecto" class="boton-crear">
+                + Nuevo proyecto
+            </button>
+        </div>
+
+        <div id="listaProyectos" class="lista-proyectos"></div>
+
+    </section>
+
+
+    <!-- EDITOR -->
+    <section id="editor" class="pantalla" hidden>
+
+        <div class="editor-cabecera">
+
+            <input
+                type="text"
+                id="tituloProyecto"
+                placeholder="Título de tu proyecto"
+            >
+
+            <div class="acciones-editor">
+                <button id="minimizar">−</button>
+                <button id="maximizar">□</button>
+            </div>
+
+        </div>
+
+
+        <!-- BUSCADOR DE NOTAS -->
+        <div class="buscador-notas">
+            <input
+                type="search"
+                id="buscarNota"
+                placeholder="Buscar una nota por su título..."
+            >
+            <button id="botonBuscar">Buscar</button>
+        </div>
+
+
+        <!-- HERRAMIENTAS -->
+        <div id="contenidoEditor">
+
+            <div class="herramientas">
+
+                <label>
+                    Color:
+                    <input type="color" id="colorTexto" value="#202020">
+                </label>
+
+                <label>
+                    Tipografía:
+
+                    <select id="tipoLetra">
+                        <option value="Arial">Arial</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Impact">Impact</option>
+                        <option value="Comic Sans MS">Comic Sans</option>
+                        <option value="Trebuchet MS">Trebuchet</option>
+                        <option value="Arial Black">Arial Black</option>
+                        <option value="Brush Script MT">Brush Script</option>
+                        <option value="Palatino Linotype">Palatino</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="cursive">Cursiva</option>
+                        <option value="fantasy">Decorativa</option>
+                        <option value="monospace">Monoespaciada</option>
+                    </select>
+                </label>
+
+                <button id="agregarNota">+ Nueva nota</button>
+
+                <label class="boton-imagen">
+                    + Agregar imagen
+                    <input
+                        type="file"
+                        id="seleccionarImagen"
+                        accept="image/*"
+                        hidden
+                    >
+                </label>
+
+            </div>
+
+
+            <!-- PALETA DE COLORES -->
+            <div class="panel-colores">
+
+                <p>COLORES DISPONIBLES</p>
+
+                <div class="paleta">
+
+                    <button class="color-opcion" data-color="#202020" style="background:#202020"></button>
+                    <button class="color-opcion" data-color="#3B1F1F" style="background:#3B1F1F"></button>
+                    <button class="color-opcion" data-color="#641E16" style="background:#641E16"></button>
+                    <button class="color-opcion" data-color="#78281F" style="background:#78281F"></button>
+                    <button class="color-opcion" data-color="#512E5F" style="background:#512E5F"></button>
+                    <button class="color-opcion" data-color="#4A235A" style="background:#4A235A"></button>
+                    <button class="color-opcion" data-color="#1B2631" style="background:#1B2631"></button>
+                    <button class="color-opcion" data-color="#154360" style="background:#154360"></button>
+                    <button class="color-opcion" data-color="#0E6251" style="background:#0E6251"></button>
+                    <button class="color-opcion" data-color="#145A32" style="background:#145A32"></button>
+                    <button class="color-opcion" data-color="#7D6608" style="background:#7D6608"></button>
+                    <button class="color-opcion" data-color="#784212" style="background:#784212"></button>
+
+                </div>
+
+                <label class="equipar-color">
+                    <input type="checkbox" id="equiparColor">
+                    Equipar color para lo que escriba después
+                </label>
+
+            </div>
+
+
+            <!-- NOTAS DEL PROYECTO -->
+            <div id="contenidoProyecto" class="contenido-proyecto"></div>
+
+        </div>
+
+
+        <div class="ayuda-atajos">
+            <span>CTRL + 1: Color</span>
+            <span>CTRL + 2: Tipografía</span>
+            <span>CTRL + 3: Imagen</span>
+        </div>
+
+        <div class="editor-pie">
+            <button id="guardarProyecto">Guardar proyecto</button>
+        </div>
+
+    </section>
+
+
+    <!-- PORTAFOLIO -->
+    <section id="portafolioImagenes" class="pantalla" hidden>
+
+        <h1>Portafolio de imágenes</h1>
+
+        <button id="crearCarpeta" class="boton-crear">
+            + Crear carpeta
+        </button>
+
+        <div id="listaCarpetas"></div>
+
+    </section>
+
+
+    <!-- VISTA DE PROYECTO -->
+    <section id="vistaProyecto" class="pantalla" hidden>
+
+        <h1 id="tituloVista"></h1>
+        <div id="contenidoVista"></div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>STUDIO END TAREAS FRL</p>
+    <span>Un espacio para organizar, crear y crecer.</span>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
